@@ -1,6 +1,8 @@
-﻿namespace Consumers.Api.Messaging
+﻿using Amazon.SQS.Model;
+
+namespace Consumers.Api.Messaging;
+
+public interface ISqsMessanger
 {
-    public interface ISqsMessanger
-    {
-    }
+    Task<SendMessageResponse> SendMessageAsync<T>(T message);
 }
